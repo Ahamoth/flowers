@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width"><title>Log In</title><link href="/_s/build/auth.css?3efbea3b" media="all" rel="stylesheet" type="text/css"><script src="/_s/lib/sentry/sentry.js?3efbea3b" type="text/javascript"></script><script type="text/javascript">
+            Sentry.init({
+                dsn: "https://e8459d722a298d2665e90afe5f6949cd@sentry.flexbe.net/17",
+                release: "3efbea3b",
+                environment: "production"
+            });
+        </script><script src="/_s/lib/jquery/noconflict-3.6.4+debounce.min.js" type="text/javascript" charset="utf-8"></script><link rel="icon" href="/_s/images/favicon.png?3" type="image/png"><link rel="prefetch" href="/_s/images/auth/animation-loader.gif" as="image"><link rel="prefetch" href="/_s/images/auth/animation-loader-2x.gif" as="image"></head><body><div class="auth"><a href="https://flexbe.com/" class="logo"><svg><use xlink:href="/_s/images/auth/auth.svg?2#flexbe"></use></svg></a><div class="auth-form auth-login"><h1>Log In</h1><form method="post"><input type="hidden" name="form[code]" value=""><div class="set-item user-mail"><div class="text-field shake-wrapper"><div class="field-title">Email</div><div><input type="text" name="form[user_mail]" value="" placeholder="email@address.com" type="text" autofocus="true" tabindex="1"></div></div><div class="field-help run"><div class="ico e"><i></i><i></i><i></i></div><span></span></div></div><div class="set-item user-pass"><div class="text-field shake-wrapper"><div class="field-title">Password</div><div class="container-line-input"><input name="form[user_pass]" placeholder="" type="password" tabindex="2"><a href="https://app.flexbe.com/recovery/">Forgot?</a><button type="submit">Log in</button></div></div><div class="field-help run"><div class="ico e"><i></i><i></i><i></i></div><span></span></div></div></form></div><div class="footer"><div class="label">
+            Don't have an account?  <a href="https://flexbe.com/admin/reg/">Sign Up</a>.
+        </div></div></div><script src="/_s/build/locale_en.js?3efbea3b" charset="utf-8"></script><script src="/_s/build/auth.js?3efbea3b" type="text/javascript"></script><script type="text/javascript">
+    $(document).ready(function($) {
+        const $form = $('form');
+        const error = 'error';
+
+        $form.on('submit', auth.login.bind(auth));
+        $('input[type="text"]', $form).on('keydown paste', function() {
+            $('.set-item', $form).removeClass('has-error');
+            $('.text-field', $form).removeClass('error');
+        })
+        auth.throwError(error, $form);
+    });
+    </script></body></html>
